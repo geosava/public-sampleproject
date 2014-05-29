@@ -11,6 +11,20 @@
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
+        <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+                <archive>
+                    <manifestEntries>
+                        <Class-Path>sample-services-${project.version}.jar</Class-Path>
+                    </manifestEntries>
+                </archive>
+
+            </configuration>
+        </plugin>
+        </plugins>
 	</build>
 
 	<dependencies>
@@ -19,5 +33,10 @@
 			<artifactId>javaee-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+        <dependency>
+            <groupId>gr.javapapo</groupId>
+            <artifactId>sample-services</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 </project>
