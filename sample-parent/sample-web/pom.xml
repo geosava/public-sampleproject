@@ -21,7 +21,6 @@
                         <Class-Path>sample-services-${project.version}.jar</Class-Path>
                     </manifestEntries>
                 </archive>
-
             </configuration>
         </plugin>
         </plugins>

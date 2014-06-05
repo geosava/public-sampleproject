@@ -26,6 +26,7 @@
                             <webModule>
                                 <groupId>gr.javapapo</groupId>
                                 <artifactId>sample-web</artifactId>
+
                             </webModule>
                             <ejbModule>
                                 <groupId>gr.javapapo</groupId>
