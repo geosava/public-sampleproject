@@ -48,11 +48,13 @@
                 <artifactId>javaee-api</artifactId>
                 <version>${javaee-api-version}</version>
             </dependency>
+            <!-- -JUNIT-->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit-version}</version>
             </dependency>
+            <!-- rquillian itself-->
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
@@ -60,6 +62,7 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+            <!-- this is in an extention to arquillian it is optional-->
             <dependency>
                 <groupId>org.jboss.arquillian.extension</groupId>
                 <artifactId>arquillian-transaction-bom</artifactId>
@@ -67,12 +70,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- this is container adapter for wildfly-->
             <dependency>
                 <groupId>org.wildfly</groupId>
                 <artifactId>wildfly-arquillian-container-embedded</artifactId>
                 <version>${arquillian-wildfly-version}</version>
             </dependency>
-
+            <!-- this is the wildfly emb.container - BUT eventually it is not a fully blown emb.container-->
             <dependency>
                 <groupId>org.wildfly</groupId>
                 <artifactId>wildfly-embedded</artifactId>
