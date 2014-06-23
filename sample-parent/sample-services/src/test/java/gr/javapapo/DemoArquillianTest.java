@@ -17,8 +17,8 @@ import javax.ejb.EJB;
 @RunWith(Arquillian.class)
 public class DemoArquillianTest {
 
-    @EJB
-    UserServices dummyService;
+
+    @EJB UserServices dummyService;
 
     @Deployment
     public static JavaArchive createDeployment() {
@@ -31,4 +31,8 @@ public class DemoArquillianTest {
     public void testSaysHello() {
         Assert.assertEquals("hello",dummyService.sayHello());
     }
+
+
+
+
 }
