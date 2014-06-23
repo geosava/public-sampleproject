@@ -7,4 +7,4 @@ This is a demo project, illustrating the use of Maven, JavaEE7 and other related
 * Post 3: http://javapapo.blogspot.gr/2014/05/java-ee7-and-maven-project-for-newbies.html 
 * Post 4: http://javapapo.blogspot.gr/2014/05/java-ee7-and-maven-project-for-newbies_30.html
 * Post 5: http://javapapo.blogspot.gr/2014/06/java-ee7-and-maven-project-for-newbies.html
-* Post 6: 
+* Post 6: http://javapapo.blogspot.gr/2014/06/java-ee7-and-maven-project-for-newbies_23.html
