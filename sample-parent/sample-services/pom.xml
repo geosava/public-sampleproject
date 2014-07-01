@@ -41,7 +41,7 @@
                                 <artifactItem>
                                     <groupId>org.wildfly</groupId>
                                     <artifactId>wildfly-dist</artifactId>
-                                    <version>8.1.0.Final</version>
+                                    <version>${wildfly-version}</version>
                                     <type>zip</type>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>target</outputDirectory>
@@ -70,6 +70,12 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <artifactId>shrinkwrap-resolver-depchain</artifactId>
+            <scope>test</scope>
+            <type>pom</type>
+        </dependency>
 
         <dependency>
             <groupId>org.jboss.arquillian.junit</groupId>
@@ -94,8 +100,39 @@
             <artifactId>arquillian-transaction-jta</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>h2</id>
+            <build>
+                <testResources>
+                    <testResource>
+                    <directory>/resources-h2</directory>
+                        <includes>
+                            <include>**/*</include>
+                        </includes>
+                    </testResource>
+                </testResources>
+            </build>
+        </profile>
+        <profile>
+            <id>postgre</id>
+            <build>
+                <testResources>
+                    <testResource>
 
+                        <directory>/resources-postgre</directory>
+                        <includes>
+                            <include>**/*</include>
+                        </includes>
+                    </testResource>
+                </testResources>
+            </build>
+        </profile>
+    </profiles>
 </project>

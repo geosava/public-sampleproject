@@ -1,5 +1,6 @@
-package gr.javapapo;
+package gr.javapapo.jpatests;
 
+import gr.javapapo.SimpleUser;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.transaction.api.annotation.TransactionMode;
@@ -7,6 +8,7 @@ import org.jboss.arquillian.transaction.api.annotation.Transactional;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +18,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
+ *  Arquillian test that is creating a test.war with a h2 datasource activated, eventually the ExampleDS DS bundled
+ *  with Widlfy 8.1 Server.
+
  * Created by papo on 6/15/14.
  */
 @Transactional(TransactionMode.ROLLBACK)
@@ -26,28 +31,29 @@ public class UserEntityTest {
     @PersistenceContext(name = "test")
     EntityManager em;
 
-    User theUser = null;
+    SimpleUser theSimpleUser = null;
 
     @Before
     public  void init(){
-        theUser = new User();
-        theUser.setUsername("javapapo");
-        em.persist(theUser);
+        theSimpleUser = new SimpleUser();
+        theSimpleUser.setUsername("javapapo");
+        em.persist(theSimpleUser);
 
     }
 
     @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(User.class)
+    public static WebArchive createDeployment() {
+        return ShrinkWrap.create(WebArchive.class,"test.war").addAsWebInfResource("web.xml")
+                .addClass(SimpleUser.class)
                 .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+                .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }
 
 
     @Test
     public void testGetUser() {
-        User testUser = em.find(User.class, theUser.getId());
-        Assert.assertEquals("javapapo", testUser.getUsername());
+        SimpleUser testSimpleUser = em.find(SimpleUser.class, theSimpleUser.getId());
+        Assert.assertEquals("javapapo", testSimpleUser.getUsername());
     }
+
 }
