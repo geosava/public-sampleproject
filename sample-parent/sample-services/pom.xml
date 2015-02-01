@@ -20,8 +20,8 @@
                     <forkMode>always</forkMode>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-                        <jboss.home>${project.basedir}/target/wildfly-${wildfly-version}/</jboss.home>
-                        <module.path>${project.basedir}/target/wildfly-${wildfly-version}/modules</module.path>
+                        <jboss.home>${project.basedir}/target/wildfly-8.1.0.Final</jboss.home>
+                        <module.path>${project.basedir}/target/wildfly-8.1.0.Final/modules</module.path>
                     </systemPropertyVariables>
                     <redirectTestOutputToFile>false</redirectTestOutputToFile>
                 </configuration>
@@ -112,7 +112,7 @@
             <build>
                 <testResources>
                     <testResource>
-                    <directory>src/test/resources-h2</directory>
+                    <directory>/resources-h2</directory>
                         <includes>
                             <include>**/*</include>
                         </includes>
@@ -125,7 +125,8 @@
             <build>
                 <testResources>
                     <testResource>
-                        <directory>src/test/resources-postgre</directory>
+
+                        <directory>/resources-postgre</directory>
                         <includes>
                             <include>**/*</include>
                         </includes>

@@ -30,7 +30,7 @@
 
         <!-- dependency versions -->
         <javaee-api-version>7.0</javaee-api-version>
-        <wildfly-version>8.2.0.Final</wildfly-version>
+        <wildfly-version>8.1.0.Final</wildfly-version>
 
         <!-- EJB spec version -->
         <ejb-spec-version>3.2</ejb-spec-version>
