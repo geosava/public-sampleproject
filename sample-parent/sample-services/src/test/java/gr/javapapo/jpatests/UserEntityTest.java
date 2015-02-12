@@ -19,7 +19,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *  Arquillian test that is creating a test.war with a h2 datasource activated, eventually the ExampleDS DS bundled
- *  with Widlfy 8.1 Server.
+ *  with Widlfy 8.2 Server.
 
  * Created by papo on 6/15/14.
  */
