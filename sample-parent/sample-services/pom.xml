@@ -20,8 +20,8 @@
                     <forkMode>always</forkMode>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-                        <jboss.home>${project.basedir}/target/wildfly-${wildfly-version}</jboss.home>
-                        <module.path>${project.basedir}/target/wildfly-${wildfly-version}/modules</module.path>
+                        <jboss.home>${project.basedir}/wildfly-${wildfly-version}</jboss.home>
+                        <module.path>${project.basedir}/wildfly-${wildfly-version}/modules</module.path>
                     </systemPropertyVariables>
                     <redirectTestOutputToFile>false</redirectTestOutputToFile>
                 </configuration>
@@ -44,7 +44,7 @@
                                     <version>${wildfly-version}</version>
                                     <type>zip</type>
                                     <overWrite>false</overWrite>
-                                    <outputDirectory>target</outputDirectory>
+                                    <outputDirectory>${project.basedir}</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>

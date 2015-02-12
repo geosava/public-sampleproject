@@ -48,7 +48,6 @@ public class PostgreSQLTest {
 
         return ShrinkWrap.create(WebArchive.class,"test.war")
                 .addAsWebInfResource("web.xml")
-               // .addAsWebInfResource("test-ds.xml")
                 .addClass(SimpleUser.class)
                 .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
                 .addAsLibraries(libs)
