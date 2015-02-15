@@ -14,8 +14,30 @@
 </h:head>
 
 <h:body>
+    <h2>This is a Primefaces component!</h2>
+    <h3 style="margin-top:0">Client</h3>
+    <p:clock />
 
-    <p:spinner />
+    <h3>Server</h3>
+    <p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server" />
+    <br></br>
+    <p:dataTable var="lang" value="#{prolangtableview.langs}">
+
+        <p:column headerText="name">
+            <h:outputText value="#{lang.name}" />
+        </p:column>
+
+        <p:column headerText="Inventor">
+            <h:outputText value="#{lang.inventor}" />
+        </p:column>
+
+        <p:column headerText="Year">
+            <h:outputText value="#{lang.yearOfBirth}" />
+        </p:column>
+
+
+    </p:dataTable>
+
 
 </h:body>
 </html>
