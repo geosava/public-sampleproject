@@ -12,29 +12,48 @@
     <packaging>ear</packaging>
 
     <build>
-            <finalName>sampleapp</finalName>
-            <plugins>
-                <!--Ear plugin -creating the ear - watch out skinny WARS!-->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-ear-plugin</artifactId>
-                    <configuration>
-                        <finalName>sampleapp</finalName>
-                        <defaultJavaBundleDir>lib/</defaultJavaBundleDir>
-                        <skinnyWars>true</skinnyWars>
-                        <modules>
-                            <webModule>
-                                <groupId>gr.javapapo</groupId>
-                                <artifactId>sample-web</artifactId>
-                            </webModule>
-                            <ejbModule>
-                                <groupId>gr.javapapo</groupId>
-                                <artifactId>sample-services</artifactId>
-                            </ejbModule>
-                        </modules>
-                    </configuration>
-                </plugin>
-            </plugins>
+        <finalName>sampleapp</finalName>
+        <plugins>
+            <!--Ear plugin -creating the ear - watch out skinny WARS!-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <finalName>sampleapp</finalName>
+                    <defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+                    <skinnyWars>true</skinnyWars>
+                    <modules>
+                        <webModule>
+                            <groupId>gr.javapapo</groupId>
+                            <artifactId>sample-web</artifactId>
+                        </webModule>
+                        <ejbModule>
+                            <groupId>gr.javapapo</groupId>
+                            <artifactId>sample-services</artifactId>
+                        </ejbModule>
+                    </modules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <configuration>
+                    <jboss-home>${wildfly-server-home}/wildfly-${wildfly-version}</jboss-home>
+                    <ignoreMissingDeployment>true</ignoreMissingDeployment>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>DEPLOY TO WILDFLY</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>undeploy</goal>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
     </build>
     <!-- our in app dependencies-->
     <dependencies>
@@ -53,10 +72,6 @@
             <type>ejb</type>
         </dependency>
 
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>${primefaces-version}</version>
-        </dependency>
+
     </dependencies>
 </project>
