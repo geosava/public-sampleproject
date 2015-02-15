@@ -26,7 +26,6 @@
                             <webModule>
                                 <groupId>gr.javapapo</groupId>
                                 <artifactId>sample-web</artifactId>
-
                             </webModule>
                             <ejbModule>
                                 <groupId>gr.javapapo</groupId>
@@ -39,6 +38,7 @@
     </build>
     <!-- our in app dependencies-->
     <dependencies>
+
         <dependency>
             <groupId>gr.javapapo</groupId>
             <artifactId>sample-web</artifactId>
@@ -51,6 +51,12 @@
             <artifactId>sample-services</artifactId>
             <version>${project.version}</version>
             <type>ejb</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces-version}</version>
         </dependency>
     </dependencies>
 </project>
