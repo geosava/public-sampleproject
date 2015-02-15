@@ -16,6 +16,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
             <configuration>
+
                 <archive>
                     <manifestEntries>
                         <Class-Path>sample-services-${project.version}.jar</Class-Path>
@@ -28,6 +29,11 @@
 
 	<dependencies>
 
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces-version}</version>
+        </dependency>
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
