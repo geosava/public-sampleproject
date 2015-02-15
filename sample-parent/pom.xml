@@ -33,6 +33,7 @@
         <!-- dependency versions -->
         <javaee-api-version>7.0</javaee-api-version>
         <wildfly-version>8.2.0.Final</wildfly-version>
+        <primefaces-version>5.1</primefaces-version>
 
         <!-- EJB spec version -->
         <ejb-spec-version>3.2</ejb-spec-version>
@@ -75,6 +76,12 @@
                 <artifactId>shrinkwrap-resolver-depchain</artifactId>
                 <version>${shrinkwrap.bom-version}</version>
                 <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>${primefaces-version}</version>
             </dependency>
 
             <!-- arquillian itself-->
