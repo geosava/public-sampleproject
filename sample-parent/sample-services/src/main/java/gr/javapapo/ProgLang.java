@@ -1,14 +1,15 @@
-/***********************************************************************************************************************
- * Copyright (c) 2014. Betiator.com All Rights Reserved.
- **********************************************************************************************************************/
-
+/**
+ * Disclaimer: this code is only for demo no production use
+ */
 package gr.javapapo;
+
+import java.io.Serializable;
 
 /**
  * Simple Pojo to represent a Programming Language
  * Created by papo on 2/15/15.
  */
-public class ProgLang{
+public class ProgLang implements Serializable{
 
     private String name;
     private String inventor;

@@ -1,7 +1,3 @@
-/***********************************************************************************************************************
- * Copyright (c) 2014. Betiator.com All Rights Reserved.
- **********************************************************************************************************************/
-
 package gr.javapapo.web.jsf.sample;
 
 import gr.javapapo.ProgLang;
@@ -14,7 +10,7 @@ import javax.faces.bean.ViewScoped;
 import java.util.List;
 
 /**
- * TODO Add Javadoc
+ * This is just a sample - demo, do not use in production!
  * Created by papo on 2/15/15.
  */
 @ManagedBean(name="prolangtableview")

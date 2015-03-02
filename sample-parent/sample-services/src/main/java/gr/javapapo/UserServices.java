@@ -6,8 +6,7 @@ package gr.javapapo;
 import javax.ejb.Stateless;
 
 /**
- * @author papo
- *
+ * Created by papo on 2/15/15.
  */
 @Stateless
 public class UserServices {
